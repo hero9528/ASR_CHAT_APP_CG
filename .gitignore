@@ -1,0 +1,26 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore Node.js dependencies
+/node_modules
+
+# Ignore Maven/Gradle build output directory
+/target
+/build
+
+# Log files
+*.log
+
+# IDE files
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Operating System files
+.DS_Store
+Thumbs.db
