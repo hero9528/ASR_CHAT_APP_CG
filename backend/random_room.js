@@ -72,14 +72,4 @@ router.post('/join-random-room', (req, res) => {
     res.json({ roomId: availableRoomId });
 });
 
-const app = express();
-const PORT = process.env.PORT || 10000;
-
-app.use(express.json());
-app.use('/', router);
-
-app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-});
-
-module.exports = app;
+module.exports = router;
