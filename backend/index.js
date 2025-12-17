@@ -9,7 +9,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 app.use(express.json());
-app.use('/api', randomRoomRouter);
+app.use('/api/random-room', randomRoomRouter);
 app.use('/api/auth', authRouter);
 
 wss.on('connection', (ws, req) => {
