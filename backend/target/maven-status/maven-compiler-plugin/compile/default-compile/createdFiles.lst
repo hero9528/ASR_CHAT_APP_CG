@@ -1,0 +1,3 @@
+com\funo\backend\User.class
+com\funo\backend\UserRepository.class
+com\funo\backend\BackendApplication.class

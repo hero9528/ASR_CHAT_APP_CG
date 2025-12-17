@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "18845290754",
+    "firebase_url": "https://asrchat-6a026-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "asrchat-6a026",
+    "storage_bucket": "asrchat-6a026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18845290754:android:f5baf26e2d9c7dea68321b",
+        "android_client_info": {
+          "package_name": "com.funo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18845290754-itp4o3n3e66n7ai26j35n39f10mhqqqo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.funo.app",
+            "certificate_hash": "a9327bfae8abff4a6dcca54b52c5d6d4af635802"
+          }
+        },
+        {
+          "client_id": "18845290754-13j7dmfmkqsahb279gkl4neq6vootf2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH5IAwXEPDl-_3Meh_KmQNFHaNKIyQ3M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18845290754-13j7dmfmkqsahb279gkl4neq6vootf2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
