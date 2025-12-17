@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node backend/random_room.js"
   },
   "dependencies": {
     "express": "^4.17.1",
