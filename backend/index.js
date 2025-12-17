@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 const randomRoomRouter = require('./random_room');
+const authRouter = require('./auth');
 
 const app = express();
 const server = http.createServer(app);
@@ -9,6 +10,7 @@ const wss = new WebSocket.Server({ server });
 
 app.use(express.json());
 app.use('/api', randomRoomRouter);
+app.use('/api/auth', authRouter);
 
 wss.on('connection', (ws, req) => {
     const roomId = req.url.substring(1); // Extract room ID from URL
