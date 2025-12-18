@@ -16,7 +16,7 @@ public interface ApiService {
     @POST("/api/room/auto-join")
     Call<AutoJoinResponse> autoJoin(@Header("Authorization") String authToken);
 
-    @POST("api/join-random-room")
+    @POST("/api/join-random-room")
     Call<RoomResponse> joinRandomRoom(@Body JoinRoomRequest request);
 }
 

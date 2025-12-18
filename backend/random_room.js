@@ -6,17 +6,14 @@ const rooms = {};
 const users = [];
 const MAX_USERS_PER_ROOM = 30;
 
-router.post('/signup', (req, res) => {
+router.post('/auth/signup', (req, res) => {
     const { username, email, password } = req.body;
 
     if (!username || !email || !password) {
         return res.status(400).json({ message: 'Username, email, and password are required' });
     }
 
-    // Check if user already exists
-    if (users.find(user => user.email === email)) {
-        return res.status(400).json({ message: 'User with this email already exists' });
-    }
+    // As requested, multiple accounts can be created with the same email.
 
     const newUser = { id: users.length + 1, username, email, password }; // In a real app, hash the password
     users.push(newUser);
@@ -25,7 +22,7 @@ router.post('/signup', (req, res) => {
     res.json({ accessToken: 'dummy-token' });
 });
 
-router.post('/login', (req, res) => {
+router.post('/auth/login', (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {

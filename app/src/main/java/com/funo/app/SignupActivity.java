@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import org.json.JSONObject;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -217,12 +220,22 @@ public class SignupActivity extends AppCompatActivity {
                     startActivity(new Intent(SignupActivity.this, ChatActivity.class));
                     finish();
                 } else {
-                    Toast.makeText(SignupActivity.this, "Signup failed. Please try again.", Toast.LENGTH_SHORT).show();
+                    try {
+                        // Parse the error body
+                        String errorBody = response.errorBody().string();
+                        Log.e("SignupActivity", "Error body: " + errorBody);
+                        ErrorResponse errorResponse = new com.google.gson.Gson().fromJson(errorBody, ErrorResponse.class);
+                        Toast.makeText(SignupActivity.this, "Signup failed: " + errorResponse.getError(), Toast.LENGTH_LONG).show();
+                    } catch (Exception e) {
+                        Log.e("SignupActivity", "Error parsing error body", e);
+                        Toast.makeText(SignupActivity.this, "Signup failed. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
+                Log.e("SignupActivity", "Signup failed", t);
                 Toast.makeText(SignupActivity.this, "An error occurred: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
